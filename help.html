@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Получить помощь — Добро.доступно</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Добро<span>.доступно</span></a>
+    <nav class="nav-links"><a href="catalog.html">Сборы</a><a href="how-it-works.html">Как это работает</a><a href="help.html" class="active">Получить помощь</a><a href="about.html">О нас</a></nav>
+    <a href="catalog.html" class="btn btn-primary btn-sm nav-cta">Помочь сейчас</a>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-menu"><a href="catalog.html">Сборы</a><a href="how-it-works.html">Как это работает</a><a href="help.html">Получить помощь</a><a href="about.html">О нас</a></nav>
+</header>
+
+<main id="main">
+
+<section class="hero" style="padding-top: calc(var(--nav-h) + var(--space-2xl)); padding-bottom: var(--space-xl); background: var(--color-surface);">
+  <div class="container reveal">
+    <div class="section-label">Получить помощь</div>
+    <h1>Подайте заявку на сбор</h1>
+    <p class="lead">Мы поможем верифицированной организации и частным лицам подать прозрачный сбор средств.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-block: var(--space-2xl);">
+  <div class="container" style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-3xl); align-items: start;">
+
+    <!-- LEFT: form -->
+    <form data-validate aria-label="Заявка на сбор" class="reveal">
+      <h2 style="margin-bottom: var(--space-xl);">Расскажите о своём проекте</h2>
+
+      <div class="form-group">
+        <label for="org" class="form-label">Название организации / ФИО<span class="required">*</span></label>
+        <input id="org" name="org" type="text" class="form-control" placeholder="Фонд «Шаг вперёд» или Иванов Иван" required>
+        <div class="form-error" data-error="org">Заполните это поле</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-label">Email для связи<span class="required">*</span></label>
+        <input id="email" name="email" type="email" class="form-control" placeholder="hello@example.com" required>
+        <div class="form-error" data-error="email">Введите корректный email</div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone" class="form-label">Телефон</label>
+        <input id="phone" name="phone" type="tel" class="form-control" placeholder="+7 (___) ___-__-__">
+      </div>
+
+      <div class="form-group">
+        <label for="category" class="form-label">Категория сбора<span class="required">*</span></label>
+        <select id="category" name="category" class="form-control" required>
+          <option value="">Выберите категорию</option>
+          <option>Дети</option><option>Здоровье</option><option>Образование</option><option>Пожилые</option><option>Животные</option><option>Экология</option>
+        </select>
+        <div class="form-error" data-error="category">Выберите категорию</div>
+      </div>
+
+      <div class="form-group">
+        <label for="goal" class="form-label">Цель сбора, ₽<span class="required">*</span></label>
+        <input id="goal" name="goal" type="number" min="5000" class="form-control" placeholder="100 000" required>
+        <div class="form-hint">Минимум 5 000 ₽</div>
+        <div class="form-error" data-error="goal">Укажите сумму от 5 000 ₽</div>
+      </div>
+
+      <div class="form-group">
+        <label for="story" class="form-label">Описание ситуации и цели сбора<span class="required">*</span></label>
+        <textarea id="story" name="story" class="form-control" rows="6" placeholder="Опишите кому, на что нужна помощь, почему именно сейчас. Прикрепите ссылки на документы." required></textarea>
+        <div class="form-error" data-error="story">Расскажите подробнее</div>
+      </div>
+
+      <div class="form-group">
+        <label for="docs" class="form-label">Документы (устав, ИНН, медзаключения)</label>
+        <input id="docs" name="docs" type="file" class="form-control" accept=".pdf,.jpg,.png" multiple>
+        <div class="form-hint">PDF, JPG, PNG. До 10 МБ каждый.</div>
+      </div>
+
+      <div class="form-group" style="display: flex; gap: var(--space-md); align-items: flex-start;">
+        <input id="consent" name="consent" type="checkbox" required style="width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0;">
+        <label for="consent" style="font-size: 0.9rem; color: var(--color-muted); flex: 1;">Я согласен с условиями размещения сборов и политикой конфиденциальности</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">Отправить заявку</button>
+      <p style="font-size: 0.85rem; color: var(--color-muted); text-align: center; margin-top: var(--space-md);">Мы свяжемся с вами в течение 3 рабочих дней</p>
+      <div class="alert alert-success" style="margin-top: var(--space-md);">Заявка отправлена! Проверьте почту.</div>
+    </form>
+
+    <!-- RIGHT: sidebar -->
+    <aside class="reveal">
+      <div class="surface" style="position: sticky; top: calc(var(--nav-h) + var(--space-lg)); margin-bottom: var(--space-lg);">
+        <h3 style="margin-bottom: var(--space-lg);">Что будет дальше</h3>
+        <ol style="display: flex; flex-direction: column; gap: var(--space-md); list-style: none; padding-left: var(--space-md); border-left: 2px solid var(--color-line);">
+          <li style="position: relative; padding-left: var(--space-md);"><span style="position: absolute; left: -22px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-accent);"></span><strong>1.</strong> Заявка поступает нашей команде проверки</li>
+          <li style="position: relative; padding-left: var(--space-md);"><span style="position: absolute; left: -22px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-accent);"></span><strong>2.</strong> Проверяем документы и историю организации</li>
+          <li style="position: relative; padding-left: var(--space-md);"><span style="position: absolute; left: -22px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-accent);"></span><strong>3.</strong> Устанавливаем консультацию (30 минут)</li>
+          <li style="position: relative; padding-left: var(--space-md);"><span style="position: absolute; left: -22px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-accent);"></span><strong>4.</strong> Помогаем создать страницу сбора</li>
+          <li style="position: relative; padding-left: var(--space-md);"><span style="position: absolute; left: -22px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-accent);"></span><strong>5.</strong> Запускаем и продвигаем сбор</li>
+        </ol>
+      </div>
+      <div class="surface" style="margin-bottom: var(--space-lg);">
+        <h4 style="margin-bottom: var(--space-md);">Вопросы?</h4>
+        <p style="margin-bottom: 6px;"><a href="mailto:help@dobro-dostupno.ru">help@dobro-dostupno.ru</a></p>
+        <p style="margin-bottom: 6px;"><a href="tel:+78005000000">+7 (800) 500-00-00 (бесплатно)</a></p>
+        <p style="font-size: 0.85rem; color: var(--color-muted);">Пн-Пт 9:00-18:00 МСК</p>
+      </div>
+      <div class="surface">
+        <h4 style="margin-bottom: var(--space-md);">Требования к заявке</h4>
+        <ul style="font-size: 0.9rem; color: var(--color-muted); display: flex; flex-direction: column; gap: 6px; list-style: disc; padding-left: var(--space-lg);">
+          <li>Организация зарегистрирована в РФ</li>
+          <li>Наличие ИНН и банковского счёта</li>
+          <li>Цель сбора - конкретная и измеримая</li>
+          <li>Сумма от 5 000 ₽</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Добро<span style="color: var(--color-accent);">.доступно</span></div><p class="footer-desc">Платформа простой и прозрачной благотворительности.</p><span class="wcag-badge"><span aria-hidden="true">●</span> WCAG 2.2 AA</span></div>
+      <div class="footer-col"><h4>Платформа</h4><ul><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Каталог сборов</a></li><li><a href="how-it-works.html">Как это работает</a></li><li><a href="about.html">О нас</a></li></ul></div>
+      <div class="footer-col"><h4>Помощь</h4><ul><li><a href="help.html">Получить помощь</a></li><li><a href="how-it-works.html#faq">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>Связаться</h4><ul><li><a href="mailto:hello@dobro-dostupno.ru">hello@dobro-dostupno.ru</a></li><li><a href="tel:+78005553535">+7 800 555 35 35</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Добро.доступно. Все права защищены.</span></div>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

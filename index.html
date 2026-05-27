@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Добро.доступно — Прозрачная благотворительность</title>
+<meta name="description" content="Платформа простой и прозрачной благотворительности. Каждый рубль виден.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Перейти к содержимому</a>
+
+<header class="navbar" role="banner">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Добро.доступно — главная">Добро<span>.доступно</span></a>
+    <nav class="nav-links" aria-label="Главное меню">
+      <a href="catalog.html">Сборы</a>
+      <a href="how-it-works.html">Как это работает</a>
+      <a href="help.html">Получить помощь</a>
+      <a href="about.html">О нас</a>
+    </nav>
+    <a href="catalog.html" class="btn btn-primary btn-sm nav-cta">Помочь сейчас</a>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Мобильное меню">
+    <a href="catalog.html">Сборы</a>
+    <a href="how-it-works.html">Как это работает</a>
+    <a href="help.html">Получить помощь</a>
+    <a href="about.html">О нас</a>
+    <a href="catalog.html" class="btn btn-primary">Помочь сейчас</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-aurora"></div>
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="container hero-content reveal">
+    <span class="hero-badge"><span class="dot" aria-hidden="true">●</span> Прозрачная благотворительность</span>
+    <h1>Помогай просто.<br>Видь каждый рубль.</h1>
+    <p class="lead">Собирайте средства, отслеживайте каждое пожертвование и доверяйте — мы публикуем финансовые отчёты каждого фонда.</p>
+    <div class="hero-actions">
+      <a href="catalog.html" class="btn btn-primary btn-lg">Начать помогать</a>
+      <a href="how-it-works.html" class="btn btn-secondary btn-lg">Смотреть сборы</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">47 000+</div><div class="hero-stat-label">Доноров</div></div>
+      <div><div class="hero-stat-num">1 280</div><div class="hero-stat-label">Активных сборов</div></div>
+      <div><div class="hero-stat-num">98%</div><div class="hero-stat-label">Доходит до адресата</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section style="background: var(--color-accent); color: #fff; padding-block: var(--space-2xl);" class="reveal">
+  <div class="container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); text-align: center;">
+    <div><div style="font-size: 2.25rem; font-weight: 800;">47 000+</div><div style="opacity: 0.75; font-size: 0.875rem;">Доноров за год</div></div>
+    <div><div style="font-size: 2.25rem; font-weight: 800;">1 280</div><div style="opacity: 0.75; font-size: 0.875rem;">Активных сборов</div></div>
+    <div><div style="font-size: 2.25rem; font-weight: 800;">98%</div><div style="opacity: 0.75; font-size: 0.875rem;">Доходит до адресата</div></div>
+    <div><div style="font-size: 2.25rem; font-weight: 800;">320+</div><div style="opacity: 0.75; font-size: 0.875rem;">Верифицированных фондов</div></div>
+  </div>
+</section>
+
+<!-- 3D CAROUSEL — Сердце доверия -->
+<section class="three-section">
+  <div class="three-blob three-blob-1" aria-hidden="true"></div>
+  <div class="three-blob three-blob-2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="three-info reveal">
+      <div class="section-label">3D ВИЗУАЛИЗАЦИЯ</div>
+      <h2>Сердце<br>доверия</h2>
+      <p>Интерактивная 3D-модель символизирует наш подход: прозрачность ядра, открытые слои данных, ритм пожертвований. Наведите курсор — сердце начнёт пульсировать, отражая активность платформы в реальном времени.</p>
+      <div class="three-badges">
+        <span class="three-badge">Three.js</span>
+        <span class="three-badge">GLB asset</span>
+        <span class="three-badge">IntersectionObserver</span>
+        <span class="three-badge">prefers-reduced-motion</span>
+      </div>
+    </div>
+    <div class="carousel reveal" role="region" aria-label="3D-карусель моделей" aria-roledescription="карусель">
+      <div class="carousel-header">
+        <div class="carousel-dots" role="tablist" aria-label="Выбор модели">
+          <button class="carousel-dot active" role="tab" aria-label="Модель 1" aria-current="true"></button>
+          <button class="carousel-dot" role="tab" aria-label="Модель 2"></button>
+          <button class="carousel-dot" role="tab" aria-label="Модель 3"></button>
+          <button class="carousel-dot" role="tab" aria-label="Модель 4"></button>
+          <button class="carousel-dot" role="tab" aria-label="Модель 5"></button>
+        </div>
+        <div class="carousel-counter">МОДЕЛЬ <span class="carousel-counter-text">1 / 5</span></div>
+        <div class="carousel-label">Сердце доверия</div>
+        <div class="carousel-desc">Каждый рубль виден.</div>
+      </div>
+      <div class="carousel-canvas" aria-live="polite"></div>
+      <button class="carousel-arrow carousel-prev" aria-label="Предыдущая модель">←</button>
+      <button class="carousel-arrow carousel-next" aria-label="Следующая модель">→</button>
+      <div class="carousel-hint">свайп · клик · стрелки клавиатуры</div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE STEPS -->
+<section class="section reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Как это работает</div>
+      <h2 class="section-title">Три шага до помощи</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Выберите сбор</h3>
+        <p>Проверенные сборы — диагнозы, документы, отчёты публичны для всех.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M12 3l9 9-9 9"/></svg></div>
+        <h3>Сделайте перевод</h3>
+        <p>От 100 ₽. Оплата через СБП, банковской картой или подписку.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Следите за результатом</h3>
+        <p>Получайте уведомления о расходовании. Видео и фото-отчёты от фондов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CAMPAIGNS -->
+<section class="section" style="background: var(--color-surface);" id="campaigns">
+  <div class="container">
+    <div class="section-header" style="display: flex; justify-content: space-between; align-items: end;">
+      <div>
+        <div class="section-label">Актуальные сборы</div>
+        <h2 class="section-title">Помогите прямо сейчас</h2>
+      </div>
+      <a href="catalog.html" class="btn-ghost">Все сборы →</a>
+    </div>
+    <div class="cards-grid reveal">
+      <article class="campaign-card">
+        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #FFE0E0, #FFC0CB);"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"><path d="M20 14.5C20 18 16 22 12 22s-8-4-8-7.5C4 10 8 6 12 6s8 4 8 8.5z"/></svg></div>
+        <div class="card-body">
+          <span class="card-tag">Дети</span>
+          <h3 class="card-title">Помощь детям с нарушениями слуха</h3>
+          <p class="card-desc">Фонд «Шаг вперёд» — 8 детям из Подмосковья нужны слуховые аппараты.</p>
+          <div class="progress-wrap">
+            <div class="progress-meta"><span>47 500 ₽ <small>из 100 000 ₽</small></span><span>47%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width: 47%;"></div></div>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta-item">134 донации</span>
+            <a href="campaign.html" class="btn btn-primary btn-sm">Помочь</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="campaign-card">
+        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #E0F4FF, #B8D7FF);"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="card-body">
+          <span class="card-tag">Здоровье</span>
+          <h3 class="card-title">Реабилитация после инсульта</h3>
+          <p class="card-desc">Фонд «Жизнь» — курс восстановления для Аллы из Самары.</p>
+          <div class="progress-wrap">
+            <div class="progress-meta"><span>12 300 ₽ <small>из 80 000 ₽</small></span><span>15%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width: 15%;"></div></div>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta-item">47 донаций</span>
+            <a href="campaign.html" class="btn btn-primary btn-sm">Помочь</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="campaign-card">
+        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #E0FFE6, #B5F4C0);"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"><path d="M2 3h6l3 18h11M9 12h12"/></svg></div>
+        <div class="card-body">
+          <span class="card-tag" style="background: rgba(0,178,124,0.15); color: var(--color-success);">Образование</span>
+          <h3 class="card-title">Учебники для школы в Твери</h3>
+          <p class="card-desc">Фонд «Будущее» — 65 000 ₽ собрано полностью.</p>
+          <div class="progress-wrap">
+            <div class="progress-meta"><span>65 000 ₽ <small>из 65 000 ₽</small></span><span style="color: var(--color-success);">100%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width: 100%; background: var(--color-success);"></div></div>
+          </div>
+          <div class="card-footer">
+            <span class="card-meta-item">210 донаций</span>
+            <a href="campaign.html" class="btn btn-secondary btn-sm" style="border-color: var(--color-success); color: var(--color-success);">Отчёт</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section reveal">
+  <div class="container">
+    <div class="trust-banner">
+      <h2>Готовы начать?</h2>
+      <p>Выберите сбор и помогите прямо сейчас — это займёт меньше минуты.</p>
+      <a href="catalog.html" class="btn" style="background: #fff; color: var(--color-accent);">Смотреть сборы</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">Добро<span style="color: var(--color-accent);">.доступно</span></div>
+        <p class="footer-desc">Платформа простой и прозрачной благотворительности. WCAG 2.2 AA · Доверие через прозрачность · 2025</p>
+        <span class="wcag-badge"><span aria-hidden="true">●</span> WCAG 2.2 AA соответствие</span>
+      </div>
+      <div class="footer-col">
+        <h4>Платформа</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог сборов</a></li>
+          <li><a href="how-it-works.html">Как это работает</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Помощь</h4>
+        <ul>
+          <li><a href="help.html">Получить помощь</a></li>
+          <li><a href="help.html">Подать заявку</a></li>
+          <li><a href="how-it-works.html#faq">FAQ</a></li>
+          <li><a href="about.html#contacts">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Связаться</h4>
+        <ul>
+          <li><a href="mailto:hello@dobro-dostupno.ru">hello@dobro-dostupno.ru</a></li>
+          <li><a href="tel:+78005553535">+7 800 555 35 35</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Добро.доступно. Все права защищены.</span>
+      <span>Пн-Пт 9:00-18:00 МСК</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
