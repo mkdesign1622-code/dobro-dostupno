@@ -980,3 +980,69 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   overflow: hidden;
 }
 .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── Mobile overflow safety net ──────────────────────────────── */
+html, body { overflow-x: hidden; }
+.three-section { overflow: hidden; }
+img { max-width: 100%; height: auto; }
+
+/* All explicit multi-col grids → adaptive on mobile */
+@media (max-width: 768px) {
+  /* About — stats banner (5 cols) and other inline grids */
+  main section [style*="grid-template-columns: repeat(5, 1fr)"],
+  main section [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-md) !important;
+  }
+  main section [style*="grid-template-columns: 2fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Hero stats — flex with big gaps */
+  .hero-stats { gap: var(--space-md); flex-wrap: wrap; }
+  .hero-stat-num { font-size: 1.5rem; }
+  /* Three section title size on mobile */
+  .three-info h2 { font-size: clamp(1.75rem, 8vw, 3rem) !important; }
+  .three-info p { font-size: 1rem; }
+  /* Carousel hero/text overlay on small screens */
+  .carousel { height: 380px; }
+  .carousel-label { font-size: 1rem; }
+  .carousel-desc { font-size: 0.75rem; }
+  /* Trust banner inside h2 wraps */
+  .trust-banner h2 { font-size: clamp(1.4rem, 6vw, 2rem); }
+  /* Section padding tighter */
+  .section { padding-block: var(--space-3xl); }
+  /* Footer stack */
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+  /* Mobile menu CTA full width fix */
+  .mobile-menu .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .container { padding-inline: var(--space-md); }
+  .hero { padding-top: calc(var(--nav-h) + var(--space-2xl)); padding-bottom: var(--space-2xl); }
+  h1 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+  h2 { font-size: clamp(1.35rem, 5vw, 1.75rem); }
+  /* Stats banner 2 cols stays */
+  main section [style*="grid-template-columns: repeat(5, 1fr)"],
+  main section [style*="grid-template-columns: repeat(4, 1fr)"],
+  main section [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Campaign hero grid */
+  .campaign-hero-grid { grid-template-columns: 1fr !important; gap: var(--space-xl) !important; }
+  .campaign-sticky { position: static !important; }
+  /* Three section gap reduce */
+  .three-section .container { gap: var(--space-xl); }
+  .three-section { padding-block: var(--space-3xl); }
+  /* Carousel size */
+  .carousel { height: 340px; }
+  .carousel-arrow { width: 40px; height: 40px; }
+  /* Three badges smaller */
+  .three-badge { font-size: 0.75rem; padding: 6px 12px; }
+  /* CTA banner padding */
+  .trust-banner { padding: var(--space-2xl) var(--space-lg); }
+  /* About stats — 2 cols + last item full width if odd */
+  /* Buttons fit small screens */
+  .btn-lg { padding: 14px 24px; font-size: 1rem; }
+}
