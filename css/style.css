@@ -958,3 +958,25 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .three-section .container { grid-template-columns: 1fr; }
   .carousel { height: 420px; }
 }
+
+/* ── Real card photos ─────────────────────────────────────────── */
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.card-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.card-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-photo-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
