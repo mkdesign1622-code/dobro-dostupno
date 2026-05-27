@@ -1,7 +1,4 @@
-// Главный скрипт — burger, navbar scroll, scroll-reveal, form validation
-import { initCarousel } from './three-carousel.js';
-
-// ── Burger menu ──
+// Burger, navbar scroll, reveal-on-scroll, form validation
 const burger = document.querySelector('.burger');
 const mobileMenu = document.querySelector('.mobile-menu');
 if (burger && mobileMenu) {
@@ -12,17 +9,14 @@ if (burger && mobileMenu) {
   });
 }
 
-// ── Navbar scrolled state ──
 const navbar = document.querySelector('.navbar');
 if (navbar) {
-  const handleScroll = () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 16);
-  };
-  handleScroll();
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 16);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 }
 
-// ── IntersectionObserver scroll-reveal ──
+// Reveal — guaranteed: if JS works, fade in; otherwise CSS keeps content visible
 const revealEls = document.querySelectorAll('.reveal');
 if (revealEls.length) {
   const io = new IntersectionObserver((entries) => {
@@ -32,69 +26,68 @@ if (revealEls.length) {
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach((el) => io.observe(el));
 }
 
-// ── Form validation ──
-const forms = document.querySelectorAll('form[data-validate]');
-forms.forEach((form) => {
+// Form validation
+document.querySelectorAll('form[data-validate]').forEach((form) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    let valid = true;
-    form.querySelectorAll('[required]').forEach((input) => {
-      const errEl = form.querySelector(`[data-error="${input.name}"]`);
-      let inputValid = !!input.value.trim();
-      if (input.type === 'email' && inputValid) {
-        inputValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
-      }
-      input.classList.toggle('error', !inputValid);
-      if (errEl) errEl.classList.toggle('visible', !inputValid);
-      if (!inputValid) valid = false;
+    let ok = true;
+    form.querySelectorAll('[required]').forEach((inp) => {
+      const err = form.querySelector(`[data-error="${inp.name}"]`);
+      let v = !!inp.value.trim();
+      if (inp.type === 'email' && v) v = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inp.value);
+      inp.classList.toggle('error', !v);
+      if (err) err.classList.toggle('visible', !v);
+      if (!v) ok = false;
     });
-    if (valid) {
-      const success = form.querySelector('.alert-success');
-      if (success) success.classList.add('visible');
+    if (ok) {
+      const a = form.querySelector('.alert-success');
+      if (a) a.classList.add('visible');
       form.reset();
     }
   });
-  // Live-clear errors on input
-  form.querySelectorAll('input, textarea').forEach((input) => {
-    input.addEventListener('input', () => {
-      input.classList.remove('error');
-      const errEl = form.querySelector(`[data-error="${input.name}"]`);
-      if (errEl) errEl.classList.remove('visible');
+  form.querySelectorAll('input, textarea, select').forEach((inp) => {
+    inp.addEventListener('input', () => {
+      inp.classList.remove('error');
+      const err = form.querySelector(`[data-error="${inp.name}"]`);
+      if (err) err.classList.remove('visible');
     });
   });
 });
 
-// ── Amount preset buttons (donate widget) ──
-const amountBtns = document.querySelectorAll('.amount-btn');
-amountBtns.forEach((btn) => {
+// Donate amount presets
+document.querySelectorAll('.amount-btn').forEach((btn) => {
   btn.addEventListener('click', () => {
-    amountBtns.forEach((b) => b.classList.remove('active'));
+    document.querySelectorAll('.amount-btn').forEach((b) => b.classList.remove('active'));
     btn.classList.add('active');
     const custom = document.querySelector('input[name="customAmount"]');
     if (custom) custom.value = '';
   });
 });
 
-// ── Category filter chips ──
+// Catalog filter chips
 const tags = document.querySelectorAll('.tag[data-filter]');
 tags.forEach((tag) => {
   tag.addEventListener('click', () => {
     tags.forEach((t) => t.classList.remove('active'));
     tag.classList.add('active');
-    const filter = tag.dataset.filter;
+    const f = tag.dataset.filter;
     document.querySelectorAll('[data-category]').forEach((card) => {
-      const show = filter === 'all' || card.dataset.category === filter;
-      card.style.display = show ? '' : 'none';
+      card.style.display = (f === 'all' || card.dataset.category === f) ? '' : 'none';
     });
   });
 });
 
-// ── Init 3D carousel only if section exists ──
-const carouselSection = document.querySelector('.carousel-canvas');
-if (carouselSection) {
-  initCarousel().catch((e) => console.error('3D carousel init failed:', e));
+// 3D carousel — dynamic import so its failure doesn't break the rest of the page
+if (document.querySelector('.carousel-canvas')) {
+  import('./three-carousel.js')
+    .then((m) => m.initCarousel())
+    .catch((err) => {
+      console.warn('3D carousel disabled:', err);
+      const c = document.querySelector('.carousel');
+      if (c) c.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:rgba(255,255,255,0.6);text-align:center;padding:24px;">3D-карусель отключена<br>(нужен HTTPS-сервер для подгрузки GLB)</div>';
+    });
 }
